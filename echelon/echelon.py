@@ -72,7 +72,7 @@ def customMenuEvent(self, event):
 def renameAction(self, event):
     row = self.sidebarTree.currentItem().text(0)
     print(row)
-    q, status = QInputDialog.getText(self, 'Rename Tag', 'Rename "%s" as:' % row)
+    q, status = QInputDialog.getText(self, 'Rename Tag', 'Rename Tag:"%s" as:' % row)
     if status and verify(q):
         rename(row, q)
     elif status and not verify(q):
