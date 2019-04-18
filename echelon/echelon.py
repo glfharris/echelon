@@ -12,12 +12,9 @@ def _userTagTree(self, root, _old):
     tags_tree = {}
 
     for t in tags:
-        if t.lower() == "marked" or t.lower() == "leech":
-            continue
-
         if isParent(t):
             def fil_func(partial_tag=t): return self.setFilter(
-                "tag:" + partial_tag + ' or tag:' + partial_tag + SEPARATOR + '*')
+                "(tag:" + partial_tag + ' or tag:' + partial_tag + SEPARATOR + '*)')
         else:
             def fil_func(partial_tag=t): return self.setFilter(
                 "tag", partial_tag)
@@ -30,7 +27,7 @@ def _userTagTree(self, root, _old):
         item = self.CallbackItem(
             parent, t,
             fil_func)
-        item.setIcon(0, QIcon(":/icons/anki-tag.png"))
+        item.setIcon(0, QIcon(":/icons/tag.svg"))
 
         tags_tree[t] = item
 
