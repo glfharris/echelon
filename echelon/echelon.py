@@ -3,7 +3,7 @@ from aqt.browser import Browser
 from aqt.qt import QIcon, QAction, QMenu, QCursor, QInputDialog, QLineEdit, QMessageBox
 from anki.hooks import wrap
 
-from . import SEPARATOR
+from . import SEPARATOR, FULL_TAG
 from .rename import rename, verify
 
 
@@ -25,11 +25,20 @@ def _userTagTree(self, root, _old):
             parent = tags_tree[genParent(t)]
 
         item = self.CallbackItem(
-            parent, t,
+            parent, formatted(t),
             fil_func)
         item.setIcon(0, QIcon(":/icons/tag.svg"))
 
         tags_tree[t] = item
+
+
+def formatted(tag):
+    if FULL_TAG:
+        # full tag with parents and sep
+        return tag
+    else:
+        # only last sub-tag
+        return tag.split(SEPARATOR)[-1]
 
 
 def isParent(tag):

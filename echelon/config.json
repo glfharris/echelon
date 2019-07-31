@@ -1,3 +1,4 @@
 {
-    "separator": "::"
+    "separator": "::",
+    "full_tag": false
 }
