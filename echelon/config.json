@@ -1,4 +1,5 @@
 {
     "separator": "::",
+    "full_tag": false,
     "default_depth": 0
 }
