@@ -29,10 +29,9 @@ def _userTagTree(self, root, _old):
         else:
             parent = tags_tree[genParent(t)]
 
-        item = self.CallbackItem(
-            parent, formatted(t),
-            fil_func)
-    
+        item = self.CallbackItem(parent, formatted(t), fil_func)
+        item.full_name = t
+        item.is_tag = True
         item.setIcon(0, QIcon(":/icons/tag.svg"))
 
         tags_tree[t] = item
@@ -95,7 +94,11 @@ def customMenuEvent(self, event):
 
 
 def renameAction(self, event):
-    row = self.sidebarTree.currentItem().text(0)
+    try:
+        row = self.sidebarTree.currentItem().full_name
+    except:
+        QMessageBox.about(self, "Title", "Item not a Tag")
+        return
     q, status = QInputDialog.getText(self, "Rename Tag", 'Rename Tag:"%s" as:' % row)
     if status and verify(q):
         rename(row, q)
