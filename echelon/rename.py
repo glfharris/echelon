@@ -1,9 +1,12 @@
 from anki import notes
 from aqt import mw
 
-from . import SEPARATOR
+from . import get_config
+
+
 
 def rename(old_name, new_name):
+    SEPARATOR = get_config()["separator"]
     tags = mw.col.tags.all()
     rename_dict = {old_name : new_name} # {old : new}
 
@@ -29,6 +32,7 @@ def rename(old_name, new_name):
     mw.progress.finish()
 
 def verify(name):
+    SEPARAOR = get_config()["separator"]
     if name.endswith(SEPARATOR):
         return False
     if name.startswith(SEPARATOR):
