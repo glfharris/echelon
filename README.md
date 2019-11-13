@@ -12,7 +12,7 @@ Based off the addon we know and love [Hierarchical Tags by pneff](https://ankiwe
 
 ## Config
 
-This add-on will work as expected out of the box, but there are some settings you cna configure to suit your needs.
+This add-on will work as expected out of the box, but there are some settings you can configure to suit your needs.
 
 * `default_depth` - Default depth expanded to on opening the Browser. Set to 0 for a completely closed tree
 * `full_tag` - Defaults to false. Means that the tag `Apple::Braeburn::Juicy` will be displayed as `Juicy` under the tags `Apple` and `Braeburn`
