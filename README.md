@@ -10,23 +10,19 @@ Based off the addon we know and love [Hierarchical Tags by pneff](https://ankiwe
 
 ![](images/echelon-rename.png)
 
-For example if we have tags:
+## Config
 
-| Foo | Foo::Bar | Foo::Baz | Foo::Bar::Baz |
+This add-on will work as expected out of the box, but there are some settings you cna configure to suit your needs.
 
-Renaming Foo -> Apple:
+* `default_depth` - Default depth expanded to on opening the Browser. Set to 0 for a completely closed tree
+* `full_tag` - Defaults to false. Means that the tag `Apple::Braeburn::Juicy` will be displayed as `Juicy` under the tags `Apple` and `Braeburn`
+* `separator` - Defaults to `::` but can be changed if you're using something different.
 
-| Apple | Apple::Bar | Apple::Baz | Apple::Bar::Baz|
+## Renaming Tags
 
-Renaming Foo::Bar -> Banana:
+Right clicking on a tag in the browser will give you the option to enter a new name.
 
-| Foo | Banana | Foo::Baz | Banana::Baz |
-
-#### Issues
-
-At the moment anything in the Side Tree Bar will have `Rename Tag` when right clicked. If you clicked on a deck, this won't rename the deck. If you supplied a valid tag name, any tags with the same name as that deck would be renamed according to your input.
-
-| Deck: Italian | *Right Click Rename Tag* | Renames any tags called Italian |
+Echelon will then sensibly rename any child tags so that the hierarchy is preserved.
 
 ***
 

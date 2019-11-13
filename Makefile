@@ -1,3 +1,4 @@
+.PHONY: build
 
 build:
 	zip -r -j ./build/echelon-anki_v21.zip echelon

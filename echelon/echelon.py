@@ -36,7 +36,10 @@ def _userTagTree(self, root, _old):
 
         tags_tree[t] = item
 
-    self.sidebarTree.expandToDepth(DEPTH)
+    if DEPTH == 0:
+        self.sidebarTree.collapseAll()
+    else:
+        self.sidebarTree.expandToDepth(DEPTH - 1)
 
 
 def formatted(tag):
