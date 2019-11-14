@@ -32,7 +32,7 @@ def rename(old_name, new_name):
     mw.progress.finish()
 
 def verify(name):
-    SEPARAOR = get_config()["separator"]
+    SEPARATOR = get_config()["separator"]
     if name.endswith(SEPARATOR):
         return False
     if name.startswith(SEPARATOR):
