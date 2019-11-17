@@ -39,7 +39,7 @@ def verify(name):
         return False
     if ' ' in name:
         return False
-    if '' is name:
+    if '' == name:
         return False
 
     return True
