@@ -3,16 +3,11 @@ from aqt.browser import Browser
 from aqt.qt import QIcon, QAction, QMenu, QCursor, QInputDialog, QLineEdit, QMessageBox
 from anki.hooks import wrap
 
-from . import get_config
+from . import DEPTH, SEPARATOR, FULL_TAG
 from .rename import rename, verify
 
 
 def _userTagTree(self, root, _old):
-    config = get_config()
-    DEPTH = config["default_depth"]
-    SEPARATOR = config["separator"]
-    FULL_TAG = config["full_tag"]
-
     tags = sorted(getHiers(self.col.tags.all()))
     tags_tree = {}
 
@@ -48,9 +43,6 @@ def _userTagTree(self, root, _old):
 
 
 def formatted(tag):
-    config = get_config()
-    SEPARATOR = config["separator"]
-    FULL_TAG = config["full_tag"]
     if FULL_TAG:
         # full tag with parents and sep
         return tag
@@ -68,7 +60,6 @@ def isParent(tag):
 
 
 def genParent(tag):
-    SEPARATOR = get_config()["separator"]
     parts = tag.split(SEPARATOR)
     if len(parts) < 2:
         return ""
@@ -77,7 +68,6 @@ def genParent(tag):
 
 
 def getHier(name):
-    SEPARATOR = get_config()["separator"]
     res = []
     parts = name.split(SEPARATOR)
 
