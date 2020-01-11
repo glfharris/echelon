@@ -1,3 +1,5 @@
+<b>This add-on is unsupported going forward. I strongly recommend using the <a href="https://ankiweb.net/shared/info/564851917" rel="nofollow">Blitzkrieg: Advanced Browser Sidebar</a> or Glutanimate's <a href="https://ankiweb.net/shared/info/594329229">Hierarchical Tags 2</a>.</b>
+
 # Echelon
 
 An Anki 2.1 Addon for Hierarchical Tags, with context aware renaming.
